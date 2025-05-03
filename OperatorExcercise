@@ -1,0 +1,25 @@
+
+//This code is in response to an operator challenge. The challenge gave you a number of variables and asked you
+//to determine a total basked off of a formula.
+// 3 friends ate pizza and the bill was $53. We were given the number of slices and the cost per slice.
+
+public class friendsPizzaBill {
+    
+    
+integer rossSlices = 3;
+integer chandlerSlices = 1;
+integer joeySlices = 4;
+
+integer rossCost = rossSlices == 1 ? 8 : (rossSlices <= 3 ? 7 : 6) * rossSlices;
+
+integer chandlerCost = chandlerSlices == 1 ? 8 : (chandlerSlices <= 3 ? 7 : 6) * chandlerSlices;
+
+integer joeyCost = joeySlices == 1 ? 8 : (joeySlices <= 3 ? 7 : 6) * joeySlices;
+
+
+integer totalCost = chandlerCost + rossCost + joeyCost;
+
+
+    
+    
+}
