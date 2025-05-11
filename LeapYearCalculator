@@ -1,0 +1,16 @@
+//This is a calculator to determine if a year is a leap year.
+
+integer year = 2025;
+
+if (math.mod(year, 400) == 0) {
+    system.debug('It is a leap year');
+  
+} else if (math.mod(year, 100) == 0) {
+            system.debug('It is not a leap year');
+                
+} else if (math.mod(year, 4) == 0) {
+            system.debug('It is a leap year');
+                
+} else {
+    system.debug('The year ' + year + ' is not a leap year');
+}
