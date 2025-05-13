@@ -1,0 +1,36 @@
+// In this challenge we were asked to count the first twenty numbers in the fibonacci sequence.
+List<Integer> fibonacciNumbers = new List<Integer>();
+
+// First two Fibonacci numbers
+Integer first = 0;
+Integer second = 1;
+
+// Add the first two numbers to the list
+fibonacciNumbers.add(first);
+fibonacciNumbers.add(second);
+
+// We already have two numbers, so we need 18 more
+Integer count = 2;
+
+System.debug('Iteration 0: first=' + first + ', second=' + second);
+
+while (count < 20) {
+    // Calculate the next Fibonacci number
+    Integer next = first + second;
+    
+    // Add it to the list
+    fibonacciNumbers.add(next);
+    
+    // Debug output for each iteration
+    System.debug('Iteration ' + count + ': first=' + first + ', second=' + second + ', next=' + next);
+    
+    // Move the first and second to the next two numbers in the sequence
+    first = second;
+    second = next;
+    
+    // Increment the count
+    count++;
+}
+
+// Debug output for the final list
+System.debug('Final Fibonacci List: ' + fibonacciNumbers);
