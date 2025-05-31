@@ -1,0 +1,17 @@
+//This class contains two methods that accept variables and determine health aspects
+
+
+
+public class Fitness {
+    public decimal calculateBMI(integer weight, decimal height) {
+        decimal bMI = weight / (height * height);
+        
+        return bMI;
+    }
+    
+    public decimal calculatePace(decimal distance, decimal duration){
+        decimal pace = distance / duration;
+        
+        return pace;
+    }
+}
