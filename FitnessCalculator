@@ -1,16 +1,29 @@
 //This class contains two methods that accept variables and determine health aspects
 
 
-
 public class Fitness {
     public decimal calculateBMI(integer weight, decimal height) {
-        decimal bMI = weight / (height * height);
         
-        return bMI;
+        if(height < 0.1){
+            throw new IllegalArgumentException('Height must be greater than 0.1 meters');
+        }else if(weight < 0.1){
+            throw new IllegalArgumentException('Weight must be greater than 0.1 kilograms');
+        }
+        
+        decimal bMI = weight / (height * height);
+        return BMI;
+        
+        
     }
     
     public decimal calculatePace(decimal distance, decimal duration){
         decimal pace = distance / duration;
+        
+        if(distance <= 0) {
+            throw new IllegalArgumentException('distance must be greater than 0');
+        }else if(duration <= 0) {
+            throw new IllegalArgumentException('duration must be greater than 0');
+        }
         
         return pace;
     }
