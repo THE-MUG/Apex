@@ -1,0 +1,94 @@
+@isTest
+public class FitnessTest {
+	@isTest
+    
+    public static void calculateBMITest() {
+        
+        Fitness Stan = new Fitness();
+        
+        decimal stanBMI = Stan.calculateBMI(150, 1.7);
+        
+        decimal roundedStanBMI = stanBMI.setScale(1, RoundingMode.HALF_UP);
+        
+        system.assertEquals(51.9, roundedStanBMI, 'The value is not equal');    
+ 
+    }
+    
+    @isTest
+    
+    public static void calculateBMITestNegative() {
+        
+        Fitness Stan = new Fitness();
+        
+        try{
+        
+        decimal stanBMIInvalidHeight = Stan.calculateBMI(150, 0);
+            
+        system.assert(false, 'Expected an error but none was thrown');
+        
+        }catch(IllegalArgumentException e) {
+            
+        system.assertEquals('Height must be greater than 0.1 meters', e.getMessage());    
+            
+        }
+        
+        try{
+        
+        decimal stanBMIInvalidWeight = Stan.calculateBMI(0, 2.5);
+            
+        system.assert(false, 'Expected an error but none was thrown');
+        
+        }catch(IllegalArgumentException e) {
+            
+        system.assertEquals('Weight must be greater than 0.1 kilograms', e.getMessage());    
+            
+        }
+        
+        
+    }
+    
+    @isTest
+        
+    public static void calculatePaceTest() {
+            
+		Fitness Stan = new Fitness();            
+        
+        decimal stanPace = Stan.calculatePace(15, 3);
+        
+        system.assertEquals(5, stanPace, 'The value is not 5');
+        
+        }
+    
+    @isTest
+        
+    public static void calculatePaceTestNegative() {
+            
+		Fitness Stan = new Fitness(); 
+        
+        try{
+        
+        decimal stanPace = Stan.calculatePace(-15, 3);
+        
+        system.assert(false, 'Expected an error but none was thrown');
+            
+        }catch(IllegalArgumentException i){
+            
+        system.assertEquals('distance must be greater than 0', i.getMessage());     
+            
+        }
+        
+        try{
+        
+        decimal stanPace = Stan.calculatePace(15, -3);
+        
+        system.assert(false, 'Expected an error but none was thrown');
+            
+        }catch(IllegalArgumentException i){
+            
+        system.assertEquals('duration must be greater than 0', i.getMessage());     
+            
+        }
+        
+        }
+        
+    }
