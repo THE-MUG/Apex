@@ -1,0 +1,14 @@
+This is an intermediate level SOQL Query I was asked to write.
+
+1.  Retrieve Name, Department and Title of all Contacts.
+2.  Retrieve all Cases [CaseNumber, Subject] raised by the contact.
+3.  Get parent Account's Name and Rating for each contact.
+4.  Position account fields to be the first result.
+5.  Retrieve only those records where Account Rating is 'Hot'.
+6.  Sort results by Contact Name.
+7.  Only retrieve open cases.
+8.  Contact Department must equal 'technology'.
+
+SELECT Account.Name, Account.Rating, Name, Department, Title, 
+(SELECT CaseNumber, Subject FROM Cases WHERE IsClosed = false) 
+FROM Contact WHERE Account.Rating = 'Hot' AND Department = 'Technology' ORDER BY Name
